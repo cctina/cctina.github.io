@@ -1,0 +1,136 @@
+/* Imports */
+@font-face
+	font-family: "Confessions"
+	src: url('../asset/fonts/Confessions Font.ttf') format('truetype')
+
+/* Variables */
+// color
+$bg-header-color: #fff
+$bg-main-color: #f7f7f7
+$text-color: #6c6c6c			// gray
+$em-color: #fbd14b				// yellow
+$nav-line-hover-color: #fcc		// light red
+$nav-text-open-color: #ccc		// gray
+// length
+$navbar-h: 100px
+
+/* Mixins */
+// Universal position
+=pos($position, $top, $right, $bottom: unset, $left: unset)
+	position: $position
+	top: $top
+	bottom: $bottom
+	left: $left
+	right: $right
+// Absolute position
+=ab-pos($top, $right, $bottom: unset, $left: unset)
+	+pos(absolute, $top, $right, $bottom: unset, $left: unset)
+// Relative position
+=rel-pos($top, $right, $bottom: unset, $left: unset)
+	+pos(relative, $top, $right, $bottom: unset, $left: unset)
+
+/* For testing */
+// *
+	// border: 1px solid #eee
+
+/* Global Settings */
+html, body
+	padding: 0
+	margin: 0
+	color: $text-color
+	// font-family: Times, sans-serif
+	font-family: Confessions, Times, sans-serif
+	letter-spacing: 0.2em
+// Reset margin. To avoid margin collapsing.
+h1, h2, h3, h4, h5, h6
+	margin: 0
+a 
+	text-decoration-line: none
+	color: inherit
+button
+	-webkit-box-sizing: content-box
+	-moz-box-sizing: content-box
+	box-sizing: content-box
+	background: none
+	border: 0
+	padding: 0
+	color: inherit
+	font: inherit
+	-webkit-user-select: none /* for button */
+	-moz-user-select: none
+	-ms-user-select: none
+.hidden
+	display: none	
+
+/* Skeleton */
+header, main > section, footer > section
+	box-sizing: border-box
+	height: 100vh
+	width: 100%
+	padding: 0 5%
+	position: relative
+header > section
+	background-color: $bg-header-color
+	height: 100%
+main > section
+	&::before
+		content: ""
+		display: block
+		height: $navbar-h
+		width: 100%
+		+rel-pos(0, unset, unset, 0)
+		// +pos(sticky, 0, unset, unset, 0)
+	&:nth-child(odd)
+		background-color: $bg-main-color
+footer > section
+	height: auto
+	text-align: center
+
+/* Navbar */
+.navbar
+	width: 100%
+	height: $navbar-h
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 100
+.nav-container
+	box-sizing: border-box
+	width: 100%
+	height: 100%
+	margin: 0
+	// padding: 0
+	padding-right: 40px
+	+ab-pos(0, 0)
+.nav-list
+	display: block
+	box-sizing: border-box
+	list-style-type: none
+	float: right
+	margin: 0
+	padding: 0
+	height: auto
+	+rel-pos(50%, 0)
+	transform: translateY(-50%)
+.nav-item
+	display: inline-block
+	box-sizing: border-box
+	font-size: 2em
+	border-bottom: 2px solid transparent
+	&:not(:last-child)
+		margin-right: 20px
+	&:hover
+		border-bottom: 2px solid $nav-line-hover-color
+		color: lighten($text-color, 20)
+
+
+/* Landing */
+.welcome
+	margin: 0 auto
+	padding: 0
+	text-align: center
+	// font-family: Confessions, Times, sans-serif
+	font-size: 1.5em
+	letter-spacing: 0.2em
+	+rel-pos(50%, unset)
+	transform: translateY(-50%)

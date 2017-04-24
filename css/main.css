@@ -1,0 +1,129 @@
+/* Imports */
+@font-face {
+  font-family: "Confessions";
+  src: url("../asset/fonts/Confessions Font.ttf") format("truetype"); }
+/* Variables */
+/* Mixins */
+/* For testing */
+/* Global Settings */
+html, body {
+  padding: 0;
+  margin: 0;
+  color: #6c6c6c;
+  font-family: Confessions, Times, sans-serif;
+  letter-spacing: 0.2em; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; }
+
+a {
+  text-decoration-line: none;
+  color: inherit; }
+
+button {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+
+.hidden {
+  display: none; }
+
+/* Skeleton */
+header, main > section, footer > section {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  padding: 0 5%;
+  position: relative; }
+
+header > section {
+  background-color: #fff;
+  height: 100%; }
+
+main > section::before {
+  content: "";
+  display: block;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  bottom: unset;
+  left: unset;
+  right: unset; }
+main > section:nth-child(odd) {
+  background-color: #f7f7f7; }
+
+footer > section {
+  height: auto;
+  text-align: center; }
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; }
+
+.nav-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-right: 40px;
+  position: absolute;
+  top: 0;
+  bottom: unset;
+  left: unset;
+  right: 0; }
+
+.nav-list {
+  display: block;
+  box-sizing: border-box;
+  list-style-type: none;
+  float: right;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  position: relative;
+  top: 50%;
+  bottom: unset;
+  left: unset;
+  right: 0;
+  transform: translateY(-50%); }
+
+.nav-item {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 2em;
+  border-bottom: 2px solid transparent; }
+  .nav-item:not(:last-child) {
+    margin-right: 20px; }
+  .nav-item:hover {
+    border-bottom: 2px solid #fcc;
+    color: #9f9f9f; }
+
+/* Landing */
+.welcome {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  position: relative;
+  top: 50%;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  transform: translateY(-50%); }
+
+/*# sourceMappingURL=main.css.map */
