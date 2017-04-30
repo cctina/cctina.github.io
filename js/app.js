@@ -52,6 +52,7 @@
 			
 			content.$container.children().remove();
 			content.$container.load(url + ' #main', function () {
+				window.scrollTo(0, 0);
 				$('.pagelink').on('click', function (e) {
 					content.pageLoad(e);
 				});

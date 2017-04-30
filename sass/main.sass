@@ -116,7 +116,16 @@ main > section
 footer > section
 	height: auto
 	text-align: center
-
+// section > content
+.content
+	width: 70%
+	max-width: 800px
+	height: auto
+	margin: 0 auto
+	+rel-pos(calc(50% - #{$navbar-h}), unset, unset, 0)
+	transform: translateY(-50%)
+	font-size: 1.1em
+	line-height: 1.6em
 /* Landing */
 .welcome
 	margin: 0 auto
@@ -139,7 +148,17 @@ footer > section
 .intro__buttons
 	margin-top: 30px
 	text-align: center
-
+/* Contact */
+.contact__buttons
+	margin-top: 30px
+	text-align: center
+	& > a
+		display: inline-block
+		padding: 10px 20px
+		position: relative
+.button__text
+	display: inline-block
+	margin: 0 5px
 
 /* Font/Text */
 .bold
