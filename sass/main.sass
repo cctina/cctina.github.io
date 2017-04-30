@@ -74,7 +74,8 @@ button
 /* Skeleton */
 #container
 	box-sizing: border-box
-	height: 100vh
+	min-height: 100vh
+	height: auto
 	width: 100%
 header, main > section, footer > section
 	box-sizing: border-box
@@ -92,7 +93,7 @@ main > section
 		height: $navbar-h
 		width: 100%
 		+rel-pos(0, unset, unset, 0)
-	&:nth-child(odd)
+	&:nth-of-type(odd)
 		background-color: $bg-main-color
 footer > section
 	height: auto

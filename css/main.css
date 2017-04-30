@@ -40,7 +40,8 @@ button {
 /* Skeleton */
 #container {
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 100%; }
 
 header, main > section, footer > section {
@@ -64,7 +65,7 @@ main > section::before {
   bottom: unset;
   left: unset;
   right: unset; }
-main > section:nth-child(odd) {
+main > section:nth-of-type(odd) {
   background-color: #f7f7f7; }
 
 footer > section {
