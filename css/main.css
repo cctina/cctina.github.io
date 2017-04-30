@@ -38,6 +38,11 @@ button {
   display: none; }
 
 /* Skeleton */
+#container {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%; }
+
 header, main > section, footer > section {
   box-sizing: border-box;
   height: 100vh;

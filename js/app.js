@@ -40,10 +40,29 @@
 
 	};
 
+	// Load page contents
+	var content = {
+		$container: $('#container'),
+		pageLoad: function (e) {
+			e.preventDefault();
+			let url = e.target.href;
+
+			$('.nav-item .current').removeClass('current');
+			$(e.target).addClass('current');
+			
+			content.$container.load(url + ' #main').hide().fadeIn('slow');
+			content.$container.children().remove();
+		},
+		init: function () {
+			$(window).load(content.pageLoad);
+		}
+	}
+
 	// Listener: menu button, onclick
 	menu.$btnContainer.on('click', menu.toggle);
-	menu.$navItems.on('click', function () {
+	menu.$navItems.on('click', function (e) {
 		menu.close();
+		content.pageLoad(e);
 	});
 	// Listener: screen size changing (media query)
 	menu.mqLgWidth.addListener( function (changed) {
@@ -56,5 +75,5 @@
 			});
 		}
 	});
-	
+
 })()
