@@ -50,8 +50,19 @@
 			$('.nav-item .current').removeClass('current');
 			$(e.target).addClass('current');
 			
-			content.$container.load(url + ' #main').hide().fadeIn('slow');
 			content.$container.children().remove();
+			content.$container.load(url + ' #main', function () {
+				$('.pagelink').on('click', function (e) {
+					content.pageLoad(e);
+				});
+				// return $(this);
+			// }).hide().fadeIn('slow');
+			}).css('opacity', '0').animate({
+				opacity: 1},
+				1000, function() {
+				/* stuff to do after animation is complete */
+				console.log(`${e.target} loaded.`);
+			});
 		},
 		init: function () {
 			$(window).load(content.pageLoad);
@@ -60,8 +71,17 @@
 
 	// Listener: menu button, onclick
 	menu.$btnContainer.on('click', menu.toggle);
-	menu.$navItems.on('click', function (e) {
+	menu.$navItems.children('a').on('click', function (e) {
 		menu.close();
+		content.pageLoad(e);
+	});
+	// // Listener: onclick -- for any inner page links
+	// content.$container.children().on('load', function (e) {
+	// 	$('.pagelink').on('click', function (e) {
+	// 		content.pageLoad(e);
+	// 	});
+	// });
+	$('.pagelink').on('click', function (e) {
 		content.pageLoad(e);
 	});
 	// Listener: screen size changing (media query)
