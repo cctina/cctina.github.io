@@ -197,7 +197,6 @@ footer > section {
   height: 100vh;
   width: 100%;
   text-align: center;
-  font-size: 3rem;
   color: #ccc;
   background-color: black;
   position: absolute;
@@ -211,7 +210,8 @@ footer > section {
 .nav-item--wholepage {
   border: 0;
   display: block;
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  font-size: 4rem; }
   .nav-item--wholepage:not(:last-child) {
     margin-right: 0; }
   .nav-item--wholepage:hover {
