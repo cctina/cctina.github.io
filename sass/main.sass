@@ -86,6 +86,9 @@ button
 	-webkit-user-select: none /* for button */
 	-moz-user-select: none
 	-ms-user-select: none
+.buttons__block
+	margin-top: 30px
+	text-align: center
 .hidden
 	display: none	
 
@@ -95,6 +98,8 @@ button
 	min-height: 100vh
 	height: auto
 	width: 100%
+main 
+	height: auto
 header, main > section, footer > section
 	box-sizing: border-box
 	height: 100vh
@@ -104,7 +109,7 @@ header, main > section, footer > section
 header > section
 	background-color: $bg-header-color
 	height: 100%
-main > section
+main > section	
 	&::before
 		content: ""
 		display: block
@@ -148,6 +153,24 @@ footer > section
 .intro__buttons
 	margin-top: 30px
 	text-align: center
+/* About */
+#about
+	min-height: 100vh
+	height: auto
+.content--autoHeight
+	height: auto
+	+rel-pos(0, unset, unset, 0)
+	transform: translateY(0)
+	padding-bottom: 30px
+.skill 
+	position: relative
+	overflow: auto
+.skill__list
+	display: block
+	float: left
+	padding: 0
+	margin: 15px 60px 20px 20px 
+	
 /* Contact */
 .contact__buttons
 	margin-top: 30px

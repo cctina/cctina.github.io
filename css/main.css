@@ -51,6 +51,10 @@ button {
   -moz-user-select: none;
   -ms-user-select: none; }
 
+.buttons__block {
+  margin-top: 30px;
+  text-align: center; }
+
 .hidden {
   display: none; }
 
@@ -60,6 +64,9 @@ button {
   min-height: 100vh;
   height: auto;
   width: 100%; }
+
+main {
+  height: auto; }
 
 header, main > section, footer > section {
   box-sizing: border-box;
@@ -133,6 +140,31 @@ footer > section {
 .intro__buttons {
   margin-top: 30px;
   text-align: center; }
+
+/* About */
+#about {
+  min-height: 100vh;
+  height: auto; }
+
+.content--autoHeight {
+  height: auto;
+  position: relative;
+  top: 0;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  transform: translateY(0);
+  padding-bottom: 30px; }
+
+.skill {
+  position: relative;
+  overflow: auto; }
+
+.skill__list {
+  display: block;
+  float: left;
+  padding: 0;
+  margin: 15px 60px 20px 20px; }
 
 /* Contact */
 .contact__buttons {
