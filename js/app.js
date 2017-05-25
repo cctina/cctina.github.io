@@ -1,6 +1,40 @@
 (function () {
 	"use strict";
 	
+	// Data
+	var data = {
+		"PROJECT_TYPE": {
+			"PERSONAL": "Personal Project",
+			"TEAM": "Team Works",
+			"WIREFRAME": "Wireframing"
+		},
+		"work": [
+			{
+		        "id": 1,
+		        "image": "../asset/images/dailycss/dailycss_01.jpg",
+		        "datetime": "2017-01-15",
+		        "title": "Daily CSS Images",
+		        "description": "......",
+		        "type": "Peraonal Project",
+		        "keywords": ["HTML", "CSS", "JS", "SASS"],
+		        "platform": ["responsive"],
+		        "role": "All"
+		    },
+		    {
+		        "id": 2,
+		        "image": "../asset/images/dailycss/dailycss_02.jpg",
+		        "datetime": "2017-03-08",
+		        "title": "JavaScript30",
+		        "description": "......",
+		        "category": "Team Works",
+		        "keywords": ["HTML", "CSS", "JS", "SASS"],
+		        "platform": ["responsive"],
+		        "role": "All"
+		    }
+		]
+	}
+
+	// Application
 	var menu = {
 		$btnContainer: $('.nav-menu'),
 		$openBtn: $('.fa-bars'),		// hamburger
@@ -70,6 +104,11 @@
 		}
 	}
 
+	// Page 'Work'
+	// var work = {
+		
+	// }
+
 	// Listener: menu button, onclick
 	menu.$btnContainer.on('click', menu.toggle);
 	menu.$navItems.children('a').on('click', function (e) {
@@ -97,4 +136,4 @@
 		}
 	});
 
-})()
+}());

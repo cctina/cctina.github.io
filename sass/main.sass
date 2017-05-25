@@ -125,6 +125,9 @@ footer > section
 	height: auto
 	padding: 30px 0
 	text-align: center
+.section--autoHeight
+	min-height: 100vh
+	height: auto
 
 // section > content
 .content
@@ -175,7 +178,32 @@ footer > section
 	float: left
 	padding: 0
 	margin: 15px 60px 20px 20px 
-	
+/* Work */
+.work__container
+	display: block
+	width: 100%
+	margin: 1.7em auto
+	// border: 2px solid yellow
+.work__item	
+	box-sizing: border-box
+	display: inline-block
+	width: 300px
+	height: 100%
+	border: 2px dashed #aaa
+	// padding: 20px
+	margin: 0 1em 1em 0
+	.work__img
+		display: block
+		box-sizing: border-box
+		width: 100%
+	.work_text
+		display: block
+		box-sizing: border-box
+		padding: 20px
+	.work__img > a, .work__img > a > img
+		display: block
+		width: 100%
+		height: 100%
 /* Contact */
 .contact__buttons
 	margin-top: 30px
@@ -282,23 +310,50 @@ footer > section
  *				Media Queires
  *
  **************************************** */
-/* Large screen */
-@media only screen and (min-width: 720px)
-	// hide button
-	.nav-menu
-		display: none
-
-/* Medium screen */
-@media only screen and (min-width: 320px) and (max-width: 720px)
-	// hide list
-	.nav-list
-		display: none
-
 /* Small screen */
 @media only screen and (max-width: 320px)
 	// hide list
 	.nav-list
 		display: none
+	.work__item
+		width: 100%
+		// width: calc((100% / 2) - 2em)
+/* Medium screen */
+@media only screen and (min-width: 320px) and (max-width: 720px)
+	// hide list
+	.nav-list
+		display: none
+	.work__item
+		width: 100%
+		// width: calc((100% / 2) - 2em)
+/* Large screen */
+@media only screen and (min-width: 720px) and (max-width: 1100px)
+	// hide button
+	.nav-menu
+		display: none
+	.work__item
+		width: calc((100% / 2) - 2em)
+/* Extra-Large screen */
+@media only screen and (min-width: 1100px)
+	// hide button
+	.nav-menu
+		display: none
+	.work__item
+		width: calc((100% / 3) - 2em)
+
+
+// @media only screen and (min-width: 400px)
+// 	.item-inlineblock
+// 		width: calc((100% / 2) - 5px)
+// @media only screen and (min-width: 700px)
+// 	.item-inlineblock
+// 		width: calc((100% / 3) - 5px)
+// @media only screen and (min-width: 900px)
+// 	.item-inlineblock
+// 		width: calc((100% / 4) - 5px)
+// @media only screen and (min-width: 1100px)
+// 	.item-inlineblock
+// 		width: calc((100% / 5) - 5px)
 
 .nav-list--wholepage
 	display: block
