@@ -74,6 +74,43 @@
 
 	};
 
+	// Load page 'work' contents
+	var work = {
+		listpage: {
+			hideDetailArea: function () {
+				$('#workDetail').addClass('hidden');
+			},
+			gotoWorkOnclickHandler: function (e) {
+				e.preventDefault();
+				let work_url = e.currentTarget.href;
+				work_url = work_url.replace(/index/i, 'work_detail');
+				let work_id = e.currentTarget.id;
+				// $('#main').children('section')[1].remove();
+				$('#workDetail').removeClass('hidden');
+				$('#workDetail').children().remove();
+				$('#workDetail').load(work_url + ' #project', function () {
+					$('html, body').animate({
+						scrollTop: $('#workDetail').offset().top
+					}, 1000);
+					// $('#workDetail')[0].scrollIntoView({
+					// 	behavior: "smooth", // or "auto" or "instant"
+					// 	block: "start" 		// or "end"
+					// });
+				});
+			},
+			load: function () {
+				if ( $('#work') ) {
+					this.hideDetailArea();
+				}
+				if ( $('.work-link') ) {
+					$('.work-link').on('click', function (e) {
+						work.listpage.gotoWorkOnclickHandler(e);
+					});
+				}
+			}
+		}
+	};
+
 	// Load page contents
 	var content = {
 		$container: $('#container'),
@@ -90,24 +127,20 @@
 				$('.pagelink').on('click', function (e) {
 					content.pageLoad(e);
 				});
+
+				// for work page
+				work.listpage.load();
+
 				// return $(this);
 			// }).hide().fadeIn('slow');
 			}).css('opacity', '0').animate({
-				opacity: 1},
-				1000, function() {
-				/* stuff to do after animation is complete */
-				console.log(`${e.target} loaded.`);
-			});
+					opacity: 1
+			}, 1000);
 		},
 		init: function () {
 			$(window).load(content.pageLoad);
 		}
 	}
-
-	// Page 'Work'
-	// var work = {
-		
-	// }
 
 	// Listener: menu button, onclick
 	menu.$btnContainer.on('click', menu.toggle);
@@ -115,12 +148,7 @@
 		menu.close();
 		content.pageLoad(e);
 	});
-	// // Listener: onclick -- for any inner page links
-	// content.$container.children().on('load', function (e) {
-	// 	$('.pagelink').on('click', function (e) {
-	// 		content.pageLoad(e);
-	// 	});
-	// });
+	// Listener: onclick -- for any inner page links
 	$('.pagelink').on('click', function (e) {
 		content.pageLoad(e);
 	});
