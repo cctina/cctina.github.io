@@ -197,7 +197,8 @@ footer > section {
   min-height: 300px;
   background-color: #fff;
   border: 1px solid #ccc;
-  margin: 0 1em 1em 0; }
+  margin: 0 1em 1em 0;
+  position: relative; }
   .work__item:hover {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s; }
@@ -238,10 +239,39 @@ footer > section {
 .work__tag--basic {
   color: #acacac; }
 
-.work__img > a, .work__img > a > img {
+.work-link, .work-img {
   display: block;
   width: 100%;
   height: 100%; }
+
+.work-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: unset;
+  left: unset;
+  right: 0;
+  background-color: rgba(252, 161, 128, 0.9); }
+
+.work-cover-content {
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  transform: translateY(-50%); }
+  .work-cover-content > p {
+    margin: 0; }
+
+.work-cover-hidden {
+  display: none; }
 
 .workdetail-title {
   text-align: center; }

@@ -98,6 +98,24 @@
 					// });
 				});
 			},
+			itemOnmouseoverHandler: function (e) {
+				let target = e.currentTarget;
+				let id = target.dataset['id'];
+				// $(target).children('.work-cover').get(0).removeClass('hidden');
+				// $('.work-cover').removeClass('hidden');
+				// $('.work-cover').removeClass('work-cover-hidden');
+				$(`.work__item[data-id='${id}']`).find('.work-cover').removeClass('work-cover-hidden');
+				console.log('current target id = ' + id);
+				console.log(`.work__item[data-id='${id}']`);
+			},
+			itemOnmouseleaveHandler: function (e) {
+				let target = e.currentTarget;
+				let id = target.dataset['id'];
+				// $(target).children('.work-cover').get(0).addClass('hidden');
+				// $('.work-cover').addClass('hidden');
+				// $('.work-cover').addClass('work-cover-hidden');
+				$(`.work__item[data-id='${id}']`).find('.work-cover').addClass('work-cover-hidden');
+			},
 			load: function () {
 				if ( $('#work') ) {
 					this.hideDetailArea();
@@ -105,6 +123,24 @@
 				if ( $('.work-link') ) {
 					$('.work-link').on('click', function (e) {
 						work.listpage.gotoWorkOnclickHandler(e);
+					});
+				}
+				// var $workImg = $('.work__img');
+				// if ( $workImg ) {
+				// 	$workImg.on('mouseover', function (e) {
+				// 		work.listpage.itemOnmouseoverHandler(e);
+				// 	});
+				// 	$workImg.on('mouseleave', function (e) {
+				// 		work.listpage.itemOnmouseleaveHandler(e);
+				// 	});
+				// }
+				var $workItem = $('.work__item');
+				if ( $workItem ) {
+					$workItem.on('mouseover', function (e) {
+						work.listpage.itemOnmouseoverHandler(e);
+					});
+					$workItem.on('mouseleave', function (e) {
+						work.listpage.itemOnmouseleaveHandler(e);
 					});
 				}
 			}
