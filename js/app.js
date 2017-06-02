@@ -2,34 +2,107 @@
 	"use strict";
 	
 	// Data
+	// (image path: relative path to the html file)
 	var data = {
 		"PROJECT_TYPE": {
 			"PERSONAL": "Personal Project",
 			"TEAM": "Team Works",
 			"WIREFRAME": "Wireframing"
 		},
-		"work": [
+		"works": [
 			{
 		        "id": 1,
-		        "image": "../asset/images/dailycss/dailycss_01.jpg",
+		        "image": [
+		        	{ "path": "asset/images/dailycss/dailycss_01.jpg", "alt": "Day 1" },
+		        	{ "path": "asset/images/dailycss/dailycss_02.jpg", "alt": "Day 2" },
+		        	{ "path": "asset/images/dailycss/dailycss_03.jpg", "alt": "Day 3" },
+		        	{ "path": "asset/images/dailycss/dailycss_04_1.jpg", "alt": "Day 4" },
+		        ],
 		        "datetime": "2017-01-15",
 		        "title": "Daily CSS Images",
-		        "description": "......",
+		        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing ...",
 		        "type": "Peraonal Project",
 		        "keywords": ["HTML", "CSS", "JS", "SASS"],
 		        "platform": ["responsive"],
-		        "role": "All"
+		        "role": ["All"]
 		    },
 		    {
 		        "id": 2,
-		        "image": "../asset/images/dailycss/dailycss_02.jpg",
+		        "image": [ 
+		        	{ "path": "asset/images/dailycss/dailycss_02.jpg", "alt": "#2" }
+		        ],
+		        "datetime": "2017-03-08",
+		        "title": "JavaScript30",
+		        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+		        "category": "Team Works",
+		        "keywords": ["HTML", "CSS", "JS", "SASS"],
+		        "platform": ["responsive"],
+		        "role": ["Backend developer"]
+		    },
+		    {
+		        "id": 3,
+		        "image": [
+		        	{ "path": "asset/images/dailycss/dailycss_03.jpg", "alt": "#3" }
+		        ],
+		        "datetime": "2017-01-15",
+		        "title": "Daily CSS Images",
+		        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+		        "type": "Peraonal Project",
+		        "keywords": ["HTML", "CSS", "JS", "SASS"],
+		        "platform": ["responsive"],
+		        "role": ["Front-end developer", "Wireframing"]
+		    },
+		    {
+		        "id": 4,
+		        "image": [
+		        	{ "path": "asset/images/dailycss/dailycss_04_1.jpg", "alt": "#4" }
+		        ],
 		        "datetime": "2017-03-08",
 		        "title": "JavaScript30",
 		        "description": "......",
 		        "category": "Team Works",
 		        "keywords": ["HTML", "CSS", "JS", "SASS"],
 		        "platform": ["responsive"],
-		        "role": "All"
+		        "role": ["All"]
+		    },
+		    {
+		        "id": 5,
+		        "image": [
+		        	{ "path": "asset/images/dailycss/dailycss_05.jpg", "alt": "#5" }
+		        ],
+		        "datetime": "2017-01-15",
+		        "title": "Daily CSS Images",
+		        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+		        "type": "Peraonal Project",
+		        "keywords": ["HTML", "CSS", "JS", "SASS"],
+		        "platform": ["responsive"],
+		        "role": ["Front-end developer"]
+		    },
+		    {
+		        "id": 6,
+		        "image": [
+		        	{ "path": "asset/images/dailycss/dailycss_06_animation.gif", "alt": "#6" }
+		        ],
+		        "datetime": "2017-03-08",
+		        "title": "JavaScript30",
+		        "description": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.",
+		        "category": "Team Works",
+		        "keywords": ["HTML", "CSS", "JS", "SASS"],
+		        "platform": ["responsive"],
+		        "role": ["Wireframing"]
+		    },
+		    {
+		        "id": 7,
+		        "image": [
+		        	{ "path": "asset/images/dailycss/dailycss_07.jpg", "alt": "#7" }
+		        ],
+		        "datetime": "2017-03-08",
+		        "title": "JavaScript30",
+		        "description": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled.",
+		        "category": "Team Works",
+		        "keywords": ["HTML", "CSS", "JS", "SASS"],
+		        "platform": ["responsive"],
+		        "role": ["Wireframing"]
 		    }
 		]
 	}
@@ -77,6 +150,12 @@
 	// Load page 'work' contents
 	var work = {
 		listpage: {
+			template: Handlebars.templates['work-listitem'],
+			renderItems: function () {
+				var result = work.listpage.template(data);
+				// $('.xxx').get(0) is wrong
+				$('.work__container').html(result);
+			},
 			hideDetailArea: function () {
 				$('#workDetail').addClass('hidden');
 			},
@@ -101,9 +180,6 @@
 			itemOnmouseoverHandler: function (e) {
 				let target = e.currentTarget;
 				let id = target.dataset['id'];
-				// $(target).children('.work-cover').get(0).removeClass('hidden');
-				// $('.work-cover').removeClass('hidden');
-				// $('.work-cover').removeClass('work-cover-hidden');
 				$(`.work__item[data-id='${id}']`).find('.work-cover').removeClass('work-cover-hidden');
 				console.log('current target id = ' + id);
 				console.log(`.work__item[data-id='${id}']`);
@@ -111,12 +187,12 @@
 			itemOnmouseleaveHandler: function (e) {
 				let target = e.currentTarget;
 				let id = target.dataset['id'];
-				// $(target).children('.work-cover').get(0).addClass('hidden');
-				// $('.work-cover').addClass('hidden');
-				// $('.work-cover').addClass('work-cover-hidden');
 				$(`.work__item[data-id='${id}']`).find('.work-cover').addClass('work-cover-hidden');
 			},
 			load: function () {
+				if (work.listpage.template) {
+					work.listpage.renderItems();
+				}
 				if ( $('#work') ) {
 					this.hideDetailArea();
 				}
@@ -125,15 +201,6 @@
 						work.listpage.gotoWorkOnclickHandler(e);
 					});
 				}
-				// var $workImg = $('.work__img');
-				// if ( $workImg ) {
-				// 	$workImg.on('mouseover', function (e) {
-				// 		work.listpage.itemOnmouseoverHandler(e);
-				// 	});
-				// 	$workImg.on('mouseleave', function (e) {
-				// 		work.listpage.itemOnmouseleaveHandler(e);
-				// 	});
-				// }
 				var $workItem = $('.work__item');
 				if ( $workItem ) {
 					$workItem.on('mouseover', function (e) {

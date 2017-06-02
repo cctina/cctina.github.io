@@ -256,9 +256,13 @@ footer > section {
   background-color: rgba(252, 161, 128, 0.9); }
 
 .work-cover-content {
-  color: #fff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
   margin: 0 auto;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.8em;
+  line-height: 1.2em;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   text-align: center;
   position: relative;
