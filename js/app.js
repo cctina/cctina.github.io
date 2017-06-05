@@ -18,91 +18,98 @@
 		        	{ "path": "asset/images/dailycss/dailycss_03.jpg", "alt": "Day 3" },
 		        	{ "path": "asset/images/dailycss/dailycss_04_1.jpg", "alt": "Day 4" },
 		        ],
-		        "datetime": "2017-01-15",
+		        "date": "2017-01-15",
 		        "title": "Daily CSS Images",
 		        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing ...",
 		        "type": "Peraonal Project",
 		        "keywords": ["HTML", "CSS", "JS", "SASS"],
 		        "platform": ["responsive"],
-		        "role": ["All"]
+		        "role": ["All"],
+		        "link": "https://github.com/cctina/DailyCSSImages"
 		    },
 		    {
 		        "id": 2,
 		        "image": [ 
 		        	{ "path": "asset/images/dailycss/dailycss_02.jpg", "alt": "#2" }
 		        ],
-		        "datetime": "2017-03-08",
+		        "date": "2017-03-08",
 		        "title": "JavaScript30",
 		        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
 		        "category": "Team Works",
 		        "keywords": ["HTML", "CSS", "JS", "SASS"],
 		        "platform": ["responsive"],
-		        "role": ["Backend developer"]
+		        "role": ["Backend developer"],
+		        "link": "https://github.com/cctina/JavaScript30"
 		    },
 		    {
 		        "id": 3,
 		        "image": [
 		        	{ "path": "asset/images/dailycss/dailycss_03.jpg", "alt": "#3" }
 		        ],
-		        "datetime": "2017-01-15",
+		        "date": "2017-01-15",
 		        "title": "Daily CSS Images",
 		        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
 		        "type": "Peraonal Project",
 		        "keywords": ["HTML", "CSS", "JS", "SASS"],
 		        "platform": ["responsive"],
-		        "role": ["Front-end developer", "Wireframing"]
+		        "role": ["Front-end developer", "Wireframing"],
+		        "link": "https://github.com/cctina/"
 		    },
 		    {
 		        "id": 4,
 		        "image": [
 		        	{ "path": "asset/images/dailycss/dailycss_04_1.jpg", "alt": "#4" }
 		        ],
-		        "datetime": "2017-03-08",
+		        "date": "2017-03-08",
 		        "title": "JavaScript30",
 		        "description": "......",
 		        "category": "Team Works",
 		        "keywords": ["HTML", "CSS", "JS", "SASS"],
 		        "platform": ["responsive"],
-		        "role": ["All"]
+		        "role": ["All"],
+		        "link": "https://github.com/cctina/"
 		    },
 		    {
 		        "id": 5,
 		        "image": [
 		        	{ "path": "asset/images/dailycss/dailycss_05.jpg", "alt": "#5" }
 		        ],
-		        "datetime": "2017-01-15",
+		        "date": "2017-01-15",
 		        "title": "Daily CSS Images",
 		        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
 		        "type": "Peraonal Project",
 		        "keywords": ["HTML", "CSS", "JS", "SASS"],
 		        "platform": ["responsive"],
-		        "role": ["Front-end developer"]
+		        "role": ["Front-end developer"],
+		        "link": "https://github.com/cctina/"
 		    },
 		    {
 		        "id": 6,
 		        "image": [
 		        	{ "path": "asset/images/dailycss/dailycss_06_animation.gif", "alt": "#6" }
 		        ],
-		        "datetime": "2017-03-08",
+		        "date": "2017-03-08",
 		        "title": "JavaScript30",
 		        "description": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.",
 		        "category": "Team Works",
 		        "keywords": ["HTML", "CSS", "JS", "SASS"],
 		        "platform": ["responsive"],
-		        "role": ["Wireframing"]
+		        "role": ["Wireframing"],
+		        "link": "https://github.com/cctina/"
 		    },
 		    {
 		        "id": 7,
 		        "image": [
 		        	{ "path": "asset/images/dailycss/dailycss_07.jpg", "alt": "#7" }
 		        ],
-		        "datetime": "2017-03-08",
+		        "date": "2017-03-08",
 		        "title": "JavaScript30",
 		        "description": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled.",
 		        "category": "Team Works",
 		        "keywords": ["HTML", "CSS", "JS", "SASS"],
 		        "platform": ["responsive"],
-		        "role": ["Wireframing"]
+		        "role": ["Wireframing"],
+		        "link": "https://github.com/cctina/"
 		    }
 		]
 	}
@@ -161,13 +168,24 @@
 			},
 			gotoWorkOnclickHandler: function (e) {
 				e.preventDefault();
+				// Get item root node & id
+				let $targetItem = $(e.currentTarget).parents('.work__item');
+				let work_id = $targetItem.data('id');
+				work.detailpage.currentItem.setId(work_id);
+
+				// Set template url
 				let work_url = e.currentTarget.href;
 				work_url = work_url.replace(/index/i, 'work_detail');
-				let work_id = e.currentTarget.id;
+
 				// $('#main').children('section')[1].remove();
 				$('#workDetail').removeClass('hidden');
 				$('#workDetail').children().remove();
-				$('#workDetail').load(work_url + ' #project', function () {
+				$('#workDetail').load(work_url + ' #project', function (response, status, xhr) {
+					let work_id = work.detailpage.currentItem.getId();
+					// console.log("work_id: " + work_id);
+					if (work_id && work_id > 0) {
+						work.detailpage.init(work_id); 	
+					}
 					$('html, body').animate({
 						scrollTop: $('#workDetail').offset().top
 					}, 1000);
@@ -181,8 +199,7 @@
 				let target = e.currentTarget;
 				let id = target.dataset['id'];
 				$(`.work__item[data-id='${id}']`).find('.work-cover').removeClass('work-cover-hidden');
-				console.log('current target id = ' + id);
-				console.log(`.work__item[data-id='${id}']`);
+				// console.log('current target id = ' + id);
 			},
 			itemOnmouseleaveHandler: function (e) {
 				let target = e.currentTarget;
@@ -210,6 +227,30 @@
 						work.listpage.itemOnmouseleaveHandler(e);
 					});
 				}
+			}
+		},
+
+		detailpage: {
+			template: Handlebars.templates['work-detailitem'],
+			currentItem: {
+				id: 0,
+				setId: function (id) {
+					this.id = id;
+				},
+				getId: function () {
+					return this.id;
+				}
+			},
+			render: function (id) {
+				var index = id - 1;
+				var result = work.detailpage.template(data.works[index]);
+				if (result) {
+					$('.workdetail__container').empty();
+					$('.workdetail__container').html(result);
+				}
+			},
+			init: function (id) {
+				work.detailpage.render(id);
 			}
 		}
 	};
