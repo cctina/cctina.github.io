@@ -7,7 +7,7 @@
 	"works": [
 		{
 	        "id": 1,
-	        "image": [
+	        "images": [
 	        	{ "path": "asset/images/dailycss/dailycss_01.jpg", "alt": "Day 1" },
 	        	{ "path": "asset/images/dailycss/dailycss_02.jpg", "alt": "Day 2" },
 	        	{ "path": "asset/images/dailycss/dailycss_03.jpg", "alt": "Day 3" },
@@ -24,13 +24,13 @@
 	    },
 	    {
 	        "id": 2,
-	        "image": [ 
+	        "images": [ 
 	        	{ "path": "asset/images/dailycss/dailycss_02.jpg", "alt": "#2" }
 	        ],
 	        "date": "2017-03-08",
 	        "title": "JavaScript30",
 	        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-	        "category": "Team Works",
+	        "type": "Team Works",
 	        "keywords": ["HTML", "CSS", "JS", "SASS"],
 	        "platform": ["responsive"],
 	        "role": ["Backend developer"],
@@ -38,7 +38,7 @@
 	    },
 	    {
 	        "id": 3,
-	        "image": [
+	        "images": [
 	        	{ "path": "asset/images/dailycss/dailycss_03.jpg", "alt": "#3" }
 	        ],
 	        "date": "2017-01-15",
@@ -52,13 +52,13 @@
 	    },
 	    {
 	        "id": 4,
-	        "image": [
+	        "images": [
 	        	{ "path": "asset/images/dailycss/dailycss_04_1.jpg", "alt": "#4" }
 	        ],
 	        "date": "2017-03-08",
 	        "title": "JavaScript30",
 	        "description": "......",
-	        "category": "Team Works",
+	        "type": "Team Works",
 	        "keywords": ["HTML", "CSS", "JS", "SASS"],
 	        "platform": ["responsive"],
 	        "role": ["All"],
@@ -66,7 +66,7 @@
 	    },
 	    {
 	        "id": 5,
-	        "image": [
+	        "images": [
 	        	{ "path": "asset/images/dailycss/dailycss_05.jpg", "alt": "#5" }
 	        ],
 	        "date": "2017-01-15",
@@ -80,13 +80,13 @@
 	    },
 	    {
 	        "id": 6,
-	        "image": [
+	        "images": [
 	        	{ "path": "asset/images/dailycss/dailycss_06_animation.gif", "alt": "#6" }
 	        ],
 	        "date": "2017-03-08",
 	        "title": "JavaScript30",
 	        "description": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.",
-	        "category": "Team Works",
+	        "type": "Team Works",
 	        "keywords": ["HTML", "CSS", "JS", "SASS"],
 	        "platform": ["responsive"],
 	        "role": ["Wireframing"],
@@ -94,13 +94,13 @@
 	    },
 	    {
 	        "id": 7,
-	        "image": [
+	        "images": [
 	        	{ "path": "asset/images/dailycss/dailycss_07.jpg", "alt": "#7" }
 	        ],
 	        "date": "2017-03-08",
 	        "title": "JavaScript30",
 	        "description": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled.",
-	        "category": "Team Works",
+	        "type": "Team Works",
 	        "keywords": ["HTML", "CSS", "JS", "SASS"],
 	        "platform": ["responsive"],
 	        "role": ["Wireframing"],

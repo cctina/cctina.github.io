@@ -1,7 +1,7 @@
 {{#works}}
 <div class="work__item" data-id="{{id}}">
 	<div class="work__img">
-		<a class="work-link" href=""><img class="work-img" src="{{image.[0].path}}" alt="{{image.[0].alt}}"/></a>
+		<a class="work-link" href=""><img class="work-img" src="{{images.[0].path}}" alt="{{images.[0].alt}}"/></a>
 		<a class="work-cover work-link work-cover-hidden" href="">
 			<div class="work-cover-content">
 				<!-- <p><i class="fa fa-eye"></i></p> -->
@@ -13,7 +13,7 @@
 		<a class="work-link" href=""><p class='work__text-title'>{{title}}</p></a>
 		<ul class='work__text-desc'>
 		{{#each keywords}}
-			<li class="work__tag work__tag-'-basic">{{this}}</li>
+			<li class="work__tag work__tag--basic">{{this}}</li>
 		{{/each}}
 		</ul>
 	</div>
