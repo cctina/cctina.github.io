@@ -206,12 +206,26 @@
 				let id = target.dataset['id'];
 				$(`.work__item[data-id='${id}']`).find('.work-cover').addClass('work-cover-hidden');
 			},
+			imageloadOnerrorHandler: function (e) {
+				// message
+				let $rootNode = $(e.currentTarget).parents('.work__item');
+				let id = $rootNode.data('id');
+				console.info('Failed to load the image of item #' + id);
+				// set style
+				$(e.currentTarget).parents('.work__img').addClass('work__img--default');
+			},
 			load: function () {
 				if (work.listpage.template) {
 					work.listpage.renderItems();
 				}
 				if ( $('#work') ) {
 					this.hideDetailArea();
+				}
+				if ( $('.work-img') ) {
+					// Set style if image-loading fails
+					$('.work-img').on('error', function (e) {
+						work.listpage.imageloadOnerrorHandler(e);
+					});
 				}
 				if ( $('.work-link') ) {
 					$('.work-link').on('click', function (e) {

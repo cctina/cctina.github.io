@@ -209,6 +209,14 @@ footer > section {
   width: 100%;
   position: relative; }
 
+.work__img--default {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  vertical-align: middle;
+  color: #b9b9b9;
+  background-color: #ececec; }
+
 .work__text {
   display: block;
   box-sizing: border-box;
