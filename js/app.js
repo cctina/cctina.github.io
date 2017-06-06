@@ -175,14 +175,12 @@
 
 				// Set template url
 				let work_url = e.currentTarget.href;
-				work_url = work_url.replace(/index/i, 'work_detail');
+				// work_url = work_url.replace(/index/i, 'work_detail'); // index.html >> work_detail.html
 
-				// $('#main').children('section')[1].remove();
 				$('#workDetail').removeClass('hidden');
 				$('#workDetail').children().remove();
 				$('#workDetail').load(work_url + ' #project', function (response, status, xhr) {
 					let work_id = work.detailpage.currentItem.getId();
-					// console.log("work_id: " + work_id);
 					if (work_id && work_id > 0) {
 						work.detailpage.init(work_id); 	
 					}
