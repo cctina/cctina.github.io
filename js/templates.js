@@ -45,7 +45,7 @@ templates['work-listitem'] = template({"1":function(container,depth0,helpers,par
     + alias4(alias5(((stack1 = ((stack1 = (depth0 != null ? depth0.images : depth0)) != null ? stack1["0"] : stack1)) != null ? stack1.path : stack1), depth0))
     + "\" alt=\""
     + alias4(alias5(((stack1 = ((stack1 = (depth0 != null ? depth0.images : depth0)) != null ? stack1["0"] : stack1)) != null ? stack1.alt : stack1), depth0))
-    + "\"/></a>\r\n		<a class=\"work-cover work-link work-cover-hidden\" href=\"work_detail.html\">\r\n			<div class=\"work-cover-content\">\r\n				<!-- <p><i class=\"fa fa-eye\"></i></p> -->\r\n				<p>"
+    + "\"/></a>\r\n		<a class=\"work-cover work-link work-cover-hidden\" href=\"work_detail.html\">\r\n			<div class=\"work-cover-content\">\r\n				<!-- <p><i class=\"fa fa-eye\"></i></p> -->\r\n				<p class=\"responsive-content\">"
     + alias4(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
     + "</p>\r\n			</div>\r\n		</a>\r\n	</div>\r\n	<div class=\"work__text\">\r\n		<a class=\"work-link\" href=\"work_detail.html\"><p class='work__text-title'>"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))

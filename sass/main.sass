@@ -205,6 +205,7 @@ footer > section
 	box-sizing: border-box
 	width: 100%
 	position: relative
+	overflow: hidden
 .work__img--default
 	$defaultHeight: 200px
 	height: $defaultHeight
@@ -255,8 +256,8 @@ footer > section
 	margin: 0 auto
 	padding: 0 20px
 	color: #fff
-	font-size: 0.8em
-	line-height: 1.2em
+	// font-size: 0.8em
+	// line-height: 1.2em
 	text-shadow: 2px 2px 10px rgba(#000, 0.2)
 	width: 100%
 	text-align: center
@@ -382,7 +383,10 @@ footer > section
 		display: none
 	.work__item
 		width: 100%
-		// width: calc((100% / 2) - 2em)
+	.responsive-content
+		font-size: 0.7em
+		line-height: 1em
+
 /* Medium screen */
 @media only screen and (min-width: 320px) and (max-width: 720px)
 	// hide list
@@ -390,21 +394,47 @@ footer > section
 		display: none
 	.work__item
 		width: 100%
-		// width: calc((100% / 2) - 2em)
+	.responsive-content
+		font-size: 0.8em
+		line-height: 1.1em
+
 /* Large screen */
-@media only screen and (min-width: 720px) and (max-width: 1100px)
-	// hide button
-	.nav-menu
-		display: none
-	.work__item
-		width: calc((100% / 2) - 2em)
+@media only screen
+	@media (min-width: 720px) and (max-width: 1100px)
+		// hide button
+		.nav-menu
+			display: none
+		.work__item
+			width: calc((100% / 2) - 2em)
+	// first 1/2 ranage
+	@media (min-width: 720px) and (max-width: 920px)
+		.responsive-content
+			font-size: 0.8em
+			line-height: 1.1em
+	// last 1/2 range
+	@media (min-width: 921px) and (max-width: 1100px)
+		.responsive-content
+			font-size: 0.9em
+			line-height: 1.2em
+	
 /* Extra-Large screen */
-@media only screen and (min-width: 1100px)
-	// hide button
-	.nav-menu
-		display: none
-	.work__item
-		width: calc((100% / 3) - 2em)
+@media only screen
+	@media (min-width: 1100px)
+		// hide button
+		.nav-menu
+			display: none
+		.work__item
+			width: calc((100% / 3) - 2em)
+	// first 1/2 ranage
+	@media (min-width: 1100px) and (max-width: 1200px)
+		.responsive-content
+			font-size: 0.8em
+			line-height: 1.1em
+	// last 1/2 ranage
+	@media (min-width: 1201px)
+		.responsive-content
+			font-size: 0.9em
+			line-height: 1.2em
 
 
 // @media only screen and (min-width: 400px)

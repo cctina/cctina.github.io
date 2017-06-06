@@ -1,4 +1,5 @@
 data = {
+	"WORK_DESCR_DISPLAY_LENGTH": 200,
 	"PROJECT_TYPE": {
 		"PERSONAL": "Personal Project",
 		"TEAM": "Team Works",

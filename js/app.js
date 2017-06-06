@@ -100,8 +100,22 @@
 				// set style
 				$(e.currentTarget).parents('.work__img').addClass('work__img--default');
 			},
+			shortenDescrption: function (str) {
+				if (str.length > data.WORK_DESCR_DISPLAY_LENGTH) {
+					let result = [str.substr(0, 200), "..."];
+					return result.join("");
+				}
+				return str;
+			},
+			processData: function () {
+				// data.works
+				data.works.forEach( function(item) {
+					item.description = work.listpage.shortenDescrption(item.description);
+				});
+			},
 			load: function () {
 				if (work.listpage.template) {
+					work.listpage.processData();
 					work.listpage.renderItems();
 				}
 				if ( $('#work') ) {
