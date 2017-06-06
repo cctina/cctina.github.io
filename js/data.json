@@ -1,4 +1,4 @@
-{
+data = {
 	"PROJECT_TYPE": {
 		"PERSONAL": "Personal Project",
 		"TEAM": "Team Works",
