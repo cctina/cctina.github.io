@@ -1,6 +1,7 @@
 (function () {
 	"use strict";
 	
+	// Application
 	var menu = {
 		$btnContainer: $('.nav-menu'),
 		$openBtn: $('.fa-bars'),		// hamburger
@@ -40,6 +41,134 @@
 
 	};
 
+	// Load page 'work' contents
+	var work = {
+		listpage: {
+			template: Handlebars.templates['work-listitem'],
+			renderItems: function (e) {
+				// data: from data.json file
+				let result = work.listpage.template(data);
+				// $('.xxx').get(0) is wrong
+				$('.work__container').html(result);
+			},
+			hideDetailArea: function () {
+				$('#workDetail').addClass('hidden');
+			},
+			gotoWorkOnclickHandler: function (e) {
+				e.preventDefault();
+				// Get item root node & id
+				let $targetItem = $(e.currentTarget).parents('.work__item');
+				let work_id = $targetItem.data('id');
+				work.detailpage.currentItem.setId(work_id);
+
+				// Set template url
+				let work_url = e.currentTarget.href;
+				// work_url = work_url.replace(/index/i, 'work_detail'); // index.html >> work_detail.html
+
+				$('#workDetail').removeClass('hidden');
+				$('#workDetail').children().remove();
+				$('#workDetail').load(work_url + ' #project', function (response, status, xhr) {
+					let work_id = work.detailpage.currentItem.getId();
+					if (work_id && work_id > 0) {
+						work.detailpage.init(work_id); 	
+					}
+					$('html, body').animate({
+						scrollTop: $('#workDetail').offset().top
+					}, 1000);
+					// $('#workDetail')[0].scrollIntoView({
+					// 	behavior: "smooth", // or "auto" or "instant"
+					// 	block: "start" 		// or "end"
+					// });
+				});
+			},
+			itemOnmouseoverHandler: function (e) {
+				let target = e.currentTarget;
+				let id = target.dataset['id'];
+				$(`.work__item[data-id='${id}']`).find('.work-cover').removeClass('work-cover-hidden');
+				// console.log('current target id = ' + id);
+			},
+			itemOnmouseleaveHandler: function (e) {
+				let target = e.currentTarget;
+				let id = target.dataset['id'];
+				$(`.work__item[data-id='${id}']`).find('.work-cover').addClass('work-cover-hidden');
+			},
+			imageloadOnerrorHandler: function (e) {
+				// message
+				let $rootNode = $(e.currentTarget).parents('.work__item');
+				let id = $rootNode.data('id');
+				console.info('Failed to load the image of item #' + id);
+				// set style
+				$(e.currentTarget).parents('.work__img').addClass('work__img--default');
+			},
+			shortenDescrption: function (str) {
+				if (str.length > data.WORK_DESCR_DISPLAY_LENGTH) {
+					let result = [str.substr(0, 200), "..."];
+					return result.join("");
+				}
+				return str;
+			},
+			processData: function () {
+				// data.works
+				data.works.forEach( function(item) {
+					item.description = work.listpage.shortenDescrption(item.description);
+				});
+			},
+			load: function () {
+				if (work.listpage.template) {
+					work.listpage.processData();
+					work.listpage.renderItems();
+				}
+				if ( $('#work') ) {
+					this.hideDetailArea();
+				}
+				if ( $('.work-img') ) {
+					// Set style if image-loading fails
+					$('.work-img').on('error', function (e) {
+						work.listpage.imageloadOnerrorHandler(e);
+					});
+				}
+				if ( $('.work-link') ) {
+					$('.work-link').on('click', function (e) {
+						work.listpage.gotoWorkOnclickHandler(e);
+					});
+				}
+				let $workItem = $('.work__item');
+				if ( $workItem ) {
+					$workItem.on('mouseover', function (e) {
+						work.listpage.itemOnmouseoverHandler(e);
+					});
+					$workItem.on('mouseleave', function (e) {
+						work.listpage.itemOnmouseleaveHandler(e);
+					});
+				}
+			}
+		},
+
+		detailpage: {
+			template: Handlebars.templates['work-detailitem'],
+			currentItem: {
+				id: 0,
+				setId: function (id) {
+					this.id = id;
+				},
+				getId: function () {
+					return this.id;
+				}
+			},
+			render: function (id) {
+				var index = id - 1;
+				var result = work.detailpage.template(data.works[index]);
+				if (result) {
+					$('.workdetail__container').empty();
+					$('.workdetail__container').html(result);
+				}
+			},
+			init: function (id) {
+				work.detailpage.render(id);
+			}
+		}
+	};
+
 	// Load page contents
 	var content = {
 		$container: $('#container'),
@@ -56,14 +185,15 @@
 				$('.pagelink').on('click', function (e) {
 					content.pageLoad(e);
 				});
+
+				// for work page
+				work.listpage.load();
+
 				// return $(this);
 			// }).hide().fadeIn('slow');
 			}).css('opacity', '0').animate({
-				opacity: 1},
-				1000, function() {
-				/* stuff to do after animation is complete */
-				console.log(`${e.target} loaded.`);
-			});
+					opacity: 1
+			}, 1000);
 		},
 		init: function () {
 			$(window).load(content.pageLoad);
@@ -76,12 +206,7 @@
 		menu.close();
 		content.pageLoad(e);
 	});
-	// // Listener: onclick -- for any inner page links
-	// content.$container.children().on('load', function (e) {
-	// 	$('.pagelink').on('click', function (e) {
-	// 		content.pageLoad(e);
-	// 	});
-	// });
+	// Listener: onclick -- for any inner page links
 	$('.pagelink').on('click', function (e) {
 		content.pageLoad(e);
 	});
@@ -97,4 +222,4 @@
 		}
 	});
 
-})()
+}());

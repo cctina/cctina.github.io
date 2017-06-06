@@ -1,0 +1,111 @@
+data = {
+	"WORK_DESCR_DISPLAY_LENGTH": 200,
+	"PROJECT_TYPE": {
+		"PERSONAL": "Personal Project",
+		"TEAM": "Team Works",
+		"WIREFRAME": "Wireframing"
+	},
+	"works": [
+		{
+	        "id": 1,
+	        "images": [
+	        	{ "path": "asset/images/dailycss/dailycss_01.jpg", "alt": "Day 1" },
+	        	{ "path": "asset/images/dailycss/dailycss_02.jpg", "alt": "Day 2" },
+	        	{ "path": "asset/images/dailycss/dailycss_03.jpg", "alt": "Day 3" },
+	        	{ "path": "asset/images/dailycss/dailycss_04_1.jpg", "alt": "Day 4" },
+	        ],
+	        "date": "2017-01-15",
+	        "title": "Daily CSS Images",
+	        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing ...",
+	        "type": "Peraonal Project",
+	        "keywords": ["HTML", "CSS", "JS", "SASS"],
+	        "platform": ["responsive"],
+	        "role": ["All"],
+	        "link": "https://github.com/cctina/DailyCSSImages"
+	    },
+	    {
+	        "id": 2,
+	        "images": [ 
+	        	{ "path": "asset/images/dailycss/dailycss_02.jpg", "alt": "#2" }
+	        ],
+	        "date": "2017-03-08",
+	        "title": "JavaScript30",
+	        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+	        "type": "Team Works",
+	        "keywords": ["HTML", "CSS", "JS", "SASS"],
+	        "platform": ["responsive"],
+	        "role": ["Backend developer"],
+	        "link": "https://github.com/cctina/JavaScript30"
+	    },
+	    {
+	        "id": 3,
+	        "images": [
+	        	{ "path": "asset/images/dailycss/dailycss_03.jpg", "alt": "#3" }
+	        ],
+	        "date": "2017-01-15",
+	        "title": "Daily CSS Images",
+	        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+	        "type": "Peraonal Project",
+	        "keywords": ["HTML", "CSS", "JS", "SASS"],
+	        "platform": ["responsive"],
+	        "role": ["Front-end developer", "Wireframing"],
+	        "link": "https://github.com/cctina/"
+	    },
+	    {
+	        "id": 4,
+	        "images": [
+	        	{ "path": "asset/images/dailycss/dailycss_04_1.jpg", "alt": "#4" }
+	        ],
+	        "date": "2017-03-08",
+	        "title": "JavaScript30",
+	        "description": "......",
+	        "type": "Team Works",
+	        "keywords": ["HTML", "CSS", "JS", "SASS"],
+	        "platform": ["responsive"],
+	        "role": ["All"],
+	        "link": "https://github.com/cctina/"
+	    },
+	    {
+	        "id": 5,
+	        "images": [
+	        	{ "path": "asset/images/dailycss/dailycss_05.jpg", "alt": "#5" }
+	        ],
+	        "date": "2017-01-15",
+	        "title": "Daily CSS Images",
+	        "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+	        "type": "Peraonal Project",
+	        "keywords": ["HTML", "CSS", "JS", "SASS"],
+	        "platform": ["responsive"],
+	        "role": ["Front-end developer"],
+	        "link": "https://github.com/cctina/"
+	    },
+	    {
+	        "id": 6,
+	        "images": [
+	        	{ "path": "asset/images/dailycss/dailycss_06_animation.gif", "alt": "#6" }
+	        ],
+	        "date": "2017-03-08",
+	        "title": "JavaScript30",
+	        "description": "No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.",
+	        "type": "Team Works",
+	        "keywords": ["HTML", "CSS", "JS", "SASS"],
+	        "platform": ["responsive"],
+	        "role": ["Wireframing"],
+	        "link": "https://github.com/cctina/"
+	    },
+	    {
+	        "id": 7,
+	        "images": [
+	        	{ "path": "asset/images/dailycss/dailycss_07.jpg", "alt": "#7" }
+	        ],
+	        "date": "2017-03-08",
+	        "title": "JavaScript30",
+	        "description": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled.",
+	        "type": "Team Works",
+	        "keywords": ["HTML", "CSS", "JS", "SASS"],
+	        "platform": ["responsive"],
+	        "role": ["Wireframing"],
+	        "link": "https://github.com/cctina/"
+	    }
+	]
+}

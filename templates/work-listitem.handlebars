@@ -1,0 +1,21 @@
+{{#works}}
+<div class="work__item" data-id="{{id}}">
+	<div class="work__img">
+		<a class="work-link" href="work_detail.html"><img class="work-img" src="{{images.[0].path}}" alt="{{images.[0].alt}}"/></a>
+		<a class="work-cover work-link work-cover-hidden" href="work_detail.html">
+			<div class="work-cover-content">
+				<!-- <p><i class="fa fa-eye"></i></p> -->
+				<p class="responsive-content">{{description}}</p>
+			</div>
+		</a>
+	</div>
+	<div class="work__text">
+		<a class="work-link" href="work_detail.html"><p class='work__text-title'>{{title}}</p></a>
+		<ul class='work__text-desc'>
+		{{#each keywords}}
+			<li class="work__tag work__tag--basic">{{this}}</li>
+		{{/each}}
+		</ul>
+	</div>
+</div>
+{{/works}}
