@@ -32,7 +32,7 @@ templates['work-detailitem'] = template({"1":function(container,depth0,helpers,p
     + alias4(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
     + "</p>\r\n</div>\r\n<div class=\"workdetail-content__block\">\r\n	<p><i class=\"fa fa-link\"></i> <a class=\"workdetail-link\" href=\""
     + alias4(((helper = (helper = helpers.link || (depth0 != null ? depth0.link : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"link","hash":{},"data":data}) : helper)))
-    + "\">"
+    + "\" target=\"_blank\">"
     + alias4(((helper = (helper = helpers.link || (depth0 != null ? depth0.link : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"link","hash":{},"data":data}) : helper)))
     + "</a></p>\r\n</div>";
 },"useData":true});
