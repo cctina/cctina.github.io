@@ -1,0 +1,14 @@
+/* Mixins */
+// Universal position
+=pos($position, $top, $right, $bottom: unset, $left: unset)
+	position: $position
+	top: $top
+	bottom: $bottom
+	left: $left
+	right: $right
+// Absolute position
+=ab-pos($top, $right, $bottom: unset, $left: unset)
+	+pos(absolute, $top, $right, $bottom: unset, $left: unset)
+// Relative position
+=rel-pos($top, $right, $bottom: unset, $left: unset)
+	+pos(relative, $top, $right, $bottom: unset, $left: unset)
