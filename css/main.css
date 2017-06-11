@@ -99,7 +99,7 @@ main > section::before {
   position: relative;
   top: 0;
   bottom: unset;
-  left: unset;
+  left: 0;
   right: unset; }
 main > section:nth-of-type(odd) {
   background-color: #f7f7f7; }
@@ -121,7 +121,7 @@ footer > section {
   position: relative;
   top: calc(50% - 100px);
   bottom: unset;
-  left: unset;
+  left: 0;
   right: unset;
   transform: translateY(-50%);
   font-size: 1.1em;
@@ -321,7 +321,7 @@ footer > section {
   position: relative;
   top: calc(50% - 100px);
   bottom: unset;
-  left: unset;
+  left: 0;
   right: unset;
   transform: translateY(-50%);
   font-size: 1.1em;
@@ -341,7 +341,7 @@ footer > section {
   position: relative;
   top: 0;
   bottom: unset;
-  left: unset;
+  left: 0;
   right: unset;
   transform: translateY(0);
   padding-bottom: 30px; }
@@ -448,9 +448,9 @@ footer > section {
   position: relative;
   top: 50%;
   bottom: unset;
-  left: unset;
+  left: 50%;
   right: unset;
-  transform: translateY(-50%); }
+  transform: translate(-50%, -50%); }
   .work-cover-content > p {
     margin: 0; }
 
