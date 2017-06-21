@@ -1,0 +1,22 @@
+/* Landing */
+.welcome
+	margin: 0 auto
+	padding: 0
+	text-align: center
+	font-size: 1.5rem
+	+rel-pos(50%, unset)
+	transform: translateY(-50%)
+/* Home */
+.intro
+	width: 70%
+	height: auto
+	margin: 0 auto
+	// +rel-pos(50%, unset, unset, 0)
+	+rel-pos(calc(50% - #{$navbar-h}), unset, unset, 0)
+	transform: translateY(-50%)
+	font-size: 1.1em
+	line-height: 1.6em
+	// text-align: center
+.intro__buttons
+	margin-top: 30px
+	text-align: center

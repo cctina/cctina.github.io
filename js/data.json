@@ -1,0 +1,88 @@
+data = {
+	"WORK_DESCR_DISPLAY_LENGTH": 200,
+	"PROJECT_TYPE": {
+		"PERSONAL": "Personal Project",
+		"TEAM": "Team Works",
+		"WIREFRAME": "Wireframing"
+	},
+	"works": [
+		{
+	        "id": 1,
+	        "images": [
+	        	{ "path": "asset/images/dailycss/dailycss_01.jpg", "alt": "Day 1: Bear Cub" },
+	        	{ "path": "asset/images/dailycss/dailycss_02.jpg", "alt": "Day 2: Elephant" },
+	        	{ "path": "asset/images/dailycss/dailycss_03.jpg", "alt": "Day 3: Beaver" },
+	        	{ "path": "asset/images/dailycss/dailycss_04.jpg", "alt": "Day 4: Tiger" },
+	        	{ "path": "asset/images/dailycss/dailycss_05.jpg", "alt": "Day 5: Favorite Animated Animal" },
+	        	{ "path": "asset/images/dailycss/dailycss_06.gif", "alt": "Day 6: Clock" },
+	        	{ "path": "asset/images/dailycss/dailycss_07.jpg", "alt": "Day 7: Ruler" },
+	        ],
+	        "date": "Started from 2017 Feb (Continuing)",
+	        "title": "Daily CSS Images",
+	        "description": "Pure CSS images. Inspired by the topics daily sent by http://dailycssimages.com/.",
+	        "type": "Personal Project",
+	        "keywords": ["HTML", "CSS"],
+	        "platform": ["Desktop"],
+	        "role": ["All"],
+	        "link": "https://github.com/cctina/DailyCSSImages"
+	    },
+	    {
+	        "id": 2,
+	        "images": [ 
+	        	{ "path": "asset/images/js30/js30_01_drumkit.png", "alt": "Drumkit" },
+	        	{ "path": "asset/images/js30/js30_02_clock.png", "alt": "Clock" }
+	        ],
+	        "date": "Started from 2016 Dec (Continuing)",
+	        "title": "(Exercise) JavaScript30: Drumkit, Clcok",
+	        "description": "Interactive stuff implemented with vanilla JS. Topics are from the tutorial https://javascript30.com/",
+	        "type": "Personal Project",
+	        "keywords": ["HTML", "CSS", "JS", "Vanilla JS"],
+	        "platform": ["Desktop"],
+	        "role": ["All"],
+	        "link": "https://github.com/cctina/JavaScript30"
+	    }
+	    // {
+	    //     "id": 3,
+	    //     "images": [
+	    //     	{ "path": "asset/images/labs/meme_maker.png", "alt": "Meme maker" },
+	    //     	{ "path": "asset/images/labs/meme_maker_with_text.png", "alt": "Meme maker with image & text" }
+	    //     ],
+	    //     "date": "2016 Aug",
+	    //     "title": "*Meme maker",
+	    //     "description": "A Meme maker. Use canvas to combine text and images together.",
+	    //     "type": "Personal Project",
+	    //     "keywords": ["HTML5 Canvas", "JS"],
+	    //     "platform": ["Desktop"],
+	    //     "role": ["All"],
+	    //     "link": "https://github.com/cctina/??"
+	    // },
+	    // {
+	    //     "id": 4,
+	    //     "images": [
+	    //     	{ "path": "asset/images/labs/stamping.png", "alt": "Stamping" }
+	    //     ],
+	    //     "date": "2016 Sep",
+	    //     "title": "*Stamping",
+	    //     "description": "Add stamps whatever you like from the list on the left.",
+	    //     "type": "Personal Project",
+	    //     "keywords": ["HTML5 Canvas", "JS"],
+	    //     "platform": ["Desktop"],
+	    //     "role": ["All"],
+	    //     "link": "https://github.com/cctina/??"
+	    // },
+	    // {
+	    //     "id": 5,
+	    //     "images": [
+	    //     	{ "path": "asset/images/labs/calculator.png", "alt": "Calculator" }
+	    //     ],
+	    //     "date": "2017 Jan",
+	    //     "title": "*Calculator",
+	    //     "description": "A simple calculator.",
+	    //     "type": "Personal Project",
+	    //     "keywords": ["HTML", "CSS", "JS", "Kibo.js"],
+	    //     "platform": ["Desktop"],
+	    //     "role": ["All"],
+	    //     "link": "https://github.com/cctina/??"
+	    // }
+	]
+}

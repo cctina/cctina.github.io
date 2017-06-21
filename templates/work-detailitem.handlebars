@@ -1,0 +1,36 @@
+<h2 class="workdetail-title">{{title}}</h2>
+<div class="workdetail-content__block">
+	<ul class="flat-list">
+		<li class="flat-list-item workdetail-info">
+			<span class="workdetail-info-title">Data/Time</span> <span class="workdetail-info-value">{{date}}</span>
+		</li>
+		<li class="flat-list-item workdetail-info">
+			<span class="workdetail-info-title">Type</span> <span class="workdetail-info-value">{{type}}</span>
+		</li>
+		<li class="flat-list-item workdetail-info">
+			<span class="workdetail-info-title">Role</span> <span class="workdetail-info-value">{{role}}</span>
+		</li>
+		<li class="flat-list-item workdetail-info">
+			<span class="workdetail-info-title">Platform</span> <span class="workdetail-info-value">{{platform}}</span>
+		</li>
+	</ul>
+</div>
+<div class="workdetail-content__block">
+{{#images}}
+	<div class="workdetail-image"><img src="{{path}}" alt="{{alt}}"></div>
+{{/images}}
+</div>	
+<div class="workdetail-content__block">
+	<span class="workdetail-info-title">Keywords</span> 
+	<ul class="flat-list">
+	{{#each keywords}}
+		<li class="flat-list-item workdetail-info-value workdetail-tag">{{this}}</li>
+	{{/each}}
+	</ul>
+</div>
+<div class="workdetail-content__block">
+	<p>{{description}}</p>
+</div>
+<div class="workdetail-content__block">
+	<p><i class="fa fa-link"></i> <a class="workdetail-link" href="{{link}}" target="_blank">{{link}}</a></p>
+</div>
