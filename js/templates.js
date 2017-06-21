@@ -14,7 +14,9 @@ templates['work-detailitem'] = template({"1":function(container,depth0,helpers,p
     + "</li>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, options, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression, buffer = 
-  "<div class=\"workdetail-content__block\">\r\n	<ul class=\"flat-list\">\r\n		<li class=\"flat-list-item workdetail-info\">\r\n			<span class=\"workdetail-info-title\">Data/Time</span> <span class=\"workdetail-info-value\">"
+  "<h2 class=\"workdetail-title\">"
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</h2>\r\n<div class=\"workdetail-content__block\">\r\n	<ul class=\"flat-list\">\r\n		<li class=\"flat-list-item workdetail-info\">\r\n			<span class=\"workdetail-info-title\">Data/Time</span> <span class=\"workdetail-info-value\">"
     + alias4(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
     + "</span>\r\n		</li>\r\n		<li class=\"flat-list-item workdetail-info\">\r\n			<span class=\"workdetail-info-title\">Type</span> <span class=\"workdetail-info-value\">"
     + alias4(((helper = (helper = helpers.type || (depth0 != null ? depth0.type : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"type","hash":{},"data":data}) : helper)))
