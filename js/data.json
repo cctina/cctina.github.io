@@ -33,7 +33,7 @@ data = {
 	        	{ "path": "asset/images/js30/js30_02_clock.png", "alt": "Clock" }
 	        ],
 	        "date": "Started from 2016 Dec (Continuing)",
-	        "title": "(Exercise) JavaScript30: Drumkit, Clcok",
+	        "title": "(Exercise) JavaScript30: Drumkit, Clock",
 	        "description": "Interactive stuff implemented with vanilla JS. Topics are from the tutorial https://javascript30.com/",
 	        "type": "Personal Project",
 	        "keywords": ["HTML", "CSS", "JS", "Vanilla JS"],
