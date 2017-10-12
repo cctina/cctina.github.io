@@ -141,6 +141,9 @@ footer > section {
 .bold {
   font-weight: 700; }
 
+.small {
+  font-size: 0.8em; }
+
 /* Navbar */
 .navbar {
   width: 100%;
